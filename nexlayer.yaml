@@ -1,0 +1,10 @@
+application:
+  name: the-ad-factory
+pods:
+  - name: web
+    image: node:20-slim
+    path: /
+    servicePorts: [3000]
+    vars:
+      NODE_ENV: production
+      PORT: 3000
