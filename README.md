@@ -2,7 +2,7 @@
 
 ### *Autonomous AI Video Production Pipeline*
 
-![Dashboard Preview](docs/images/dashboard.png)
+![Dashboard Preview](docs/images/dashboard.png?v=2)
 
 **The Brand Factory** is a high-performance, multi-agent AI pipeline designed to transform simple text prompts into production-ready social media advertisements in seconds. Built with a **Neobrutalist** aesthetic, it combines cutting-edge LLM orchestration with a powerful cloud-based rendering engine.
 
