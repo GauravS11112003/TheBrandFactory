@@ -25,8 +25,6 @@ Review and refine your generated ads with our integrated AI Editor.
 - **Real-Time Previews**: See changes instantly before pushing to production.
 - **Retro-TV Framing**: Optional aesthetic filters for that signature Brand Factory look.
 
-![Editor Preview](docs/images/editor.png)
-
 ### 📈 Social Media Ready
 One-click "Push to Production" exports your videos optimized for TikTok, Instagram Reels, and YouTube Shorts.
 
