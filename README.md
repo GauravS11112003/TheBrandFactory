@@ -20,6 +20,9 @@ Our proprietary pipeline uses a team of specialized AI agents working in paralle
 ![Agents Pipeline](docs/images/agents.png)
 
 ### 🎨 Pro AI Video Editor
+
+![Agents Pipeline](docs/images/videoEditor.png)
+
 Review and refine your generated ads with our integrated AI Editor.
 - **Auto-Generated Timelines**: AI pre-segments your video for easy adjustments.
 - **Real-Time Previews**: See changes instantly before pushing to production.
