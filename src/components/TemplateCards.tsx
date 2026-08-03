@@ -32,7 +32,7 @@ export function TemplateCards({ onSelect }: TemplateCardsProps) {
       flexWrap: 'wrap',
       gap: '12px',
       width: '100%',
-      maxWidth: '760px',
+      maxWidth: '824px',
       margin: '0 auto 16px auto',
       padding: '0 32px',
       justifyContent: 'flex-start',

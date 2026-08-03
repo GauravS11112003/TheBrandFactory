@@ -4,6 +4,12 @@ import { ChatInput } from './components/ChatInput';
 import { TemplateCards } from './components/TemplateCards';
 import { AgentDashboard } from './components/AgentDashboard';
 import { VideoEditor } from './components/VideoEditor';
+import { HeroBlock, ScrollCue } from './components/HeroBlock';
+import { Marquee } from './components/Marquee';
+import { PipelineStrip } from './components/PipelineStrip';
+import { FeatureGrid } from './components/FeatureGrid';
+import { StatsBar } from './components/StatsBar';
+import { LandingFooter } from './components/LandingFooter';
 
 function App() {
   const [viewState, setViewState] = useState<'landing' | 'dashboard' | 'editor'>('landing');
@@ -69,22 +75,41 @@ function App() {
           display: 'flex', 
           flexDirection: 'column', 
           position: 'relative',
-          overflow: 'hidden',
-          justifyContent: viewState === 'landing' ? 'center' : 'flex-start',
+          overflowX: 'hidden',
+          overflowY: viewState === 'landing' ? 'auto' : 'hidden',
+          justifyContent: 'flex-start',
           paddingTop: viewState === 'dashboard' ? '24px' : '0',
           transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
         }}>
           {viewState === 'landing' && (
-             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }} className="animate-fade-in">
-               <TemplateCards onSelect={handleSubmit} />
-               <div style={{ 
-                  padding: '0 32px', 
-                  width: '100%',
-                  position: 'relative',
-                  zIndex: 10
-                }}>
-                  <ChatInput onSubmit={handleSubmit} disabled={isProcessing} isDocked={false} />
-               </div>
+             <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }} className="animate-fade-in">
+               {/* Above the fold: pitch, quick-start templates and the brief box */}
+               <section id="bf-hero" style={{
+                 minHeight: 'calc(100vh - 160px)',
+                 display: 'flex',
+                 flexDirection: 'column',
+                 justifyContent: 'center',
+                 paddingTop: '24px'
+               }}>
+                 <HeroBlock />
+                 <TemplateCards onSelect={handleSubmit} />
+                 <div style={{
+                    padding: '0 32px',
+                    width: '100%',
+                    position: 'relative',
+                    zIndex: 10
+                  }}>
+                    <ChatInput onSubmit={handleSubmit} disabled={isProcessing} isDocked={false} />
+                 </div>
+                 <ScrollCue />
+               </section>
+
+               {/* Below the fold: how the pipeline works and what it ships */}
+               <Marquee />
+               <PipelineStrip />
+               <FeatureGrid />
+               <StatsBar />
+               <LandingFooter />
              </div>
           )}
 

@@ -85,3 +85,47 @@ input, textarea, button { font-family: inherit; color: inherit; outline: none; }
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+.animate-fade-in { animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+/* --- Landing page sections --- */
+
+/* Hover lift shared by the pipeline / feature cards */
+.bf-lift { transition: transform 0.12s ease, box-shadow 0.12s ease; }
+.bf-lift:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--border-color);
+}
+
+/* Chevron sitting in the grid gap between pipeline steps */
+.bf-step-arrow { display: none; }
+@media (min-width: 1120px) {
+  .bf-step-arrow {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    right: -18px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+}
+
+@keyframes bfMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.bf-marquee { animation: bfMarquee 26s linear infinite; }
+.bf-marquee:hover { animation-play-state: paused; }
+
+@keyframes bfBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+.bf-bob { animation: bfBob 1.4s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .bf-marquee, .bf-bob, .animate-fade-in { animation: none; }
+  .bf-lift { transition: none; }
+}
